@@ -5,6 +5,7 @@
 
 package mymopso;
 
+import gui.PlotManager;
 import grids.Grid;
 import java.util.ArrayList;
 import util.Constants;
@@ -17,8 +18,8 @@ public class MOPSO {
 
     private Particle[] swarm;
     private ArrayList<Position> externArchive;
-    private int t;
     private Grid grid;
+    private PlotManager plotManager;
 
     public MOPSO() {
         this.swarm = MOPSOOperadores.createSwarm();
