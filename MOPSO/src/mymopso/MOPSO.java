@@ -42,7 +42,7 @@ public class MOPSO {
                 MOPSOOperadores.updateParticlePosition(this.swarm[i]);
                 MOPSOOperadores.evaluateParticle(this.swarm[i]);
             }
-            Util.updateExternalArchive(this.externArchive, swarm);
+            this.externArchive = Util.updateExternalArchive(this.externArchive, swarm);
             Util.calculateCrowdingDistance(this.externArchive);
             this.grid.updateGrid(this.externArchive);
             Util.trunkExternalArchive(grid, externArchive);

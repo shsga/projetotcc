@@ -35,22 +35,23 @@ public class Hipercube {
             this.lowerLimit[i] = line[i] * ranges[i];
             this.upperLimit[i] = lowerLimit[i] + ranges[i];
         }
+        this.fitness = 0.0;
+        this.positions.clear();
     }
 
     public void localizePositions(ArrayList<Position> externArchive){
-        this.positions.clear();
+        
         for(int i=0;i<externArchive.size();i++){
             Position p = externArchive.get(i);
-            if(this.isWithin(p.getPosition())){
+            if(this.isWithin(p.getFitness())){
                 this.positions.add(p);
             }
         }
     }
     public boolean isWithin(double[] p){
-        boolean result = true;
         for(int i=0; i < p.length; i++){
             if(p[i] < lowerLimit[i] || p[i] >= upperLimit[i]){
-                result = false;
+                return false;
             }
         }
         return true;
