@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
 import mymopso.Particle;
+import mymopso.Position;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -88,23 +89,23 @@ public class PlotManager {
         chartPanelSwarm = new ChartPanel(jFreeChartSwarm);
     }
 
-    public void plotExternalArchive(ArrayList<Particle> externalArchive, int currentNCallObjectiveFunction) {
+    public void plotExternalArchive(ArrayList<Position> externalArchive, int currentNCallObjectiveFunction) {
         xySeriesExternalArchive.clear();
 
-        if ((externalArchive.size() != 0) && (externalArchive.get(0).getPosition().getFitness().length >= 2)) {
+        if ((externalArchive.size() != 0) && (externalArchive.get(0).getFitness().length >= 2)) {
             for (int i = 0; i < externalArchive.size(); i++) {
-                xySeriesExternalArchive.add(externalArchive.get(i).getPosition().getFitness()[0], externalArchive.get(i).getPosition().getFitness()[1]);
+                xySeriesExternalArchive.add(externalArchive.get(i).getFitness()[0], externalArchive.get(i).getFitness()[1]);
             }
             getJFreeChartExternalArchive().setTitle("no. de chamadas: " + currentNCallObjectiveFunction);
         }
     }
 
-    public void plotSwarm(ArrayList<Particle> swarm, int currentNCallObjectiveFunction) {
+    public void plotSwarm(Particle[] swarm, int currentNCallObjectiveFunction) {
         xySeriesSwarm.clear();
 
-        if ((swarm.size() != 0) && (swarm.get(0).getPosition().getFitness().length >= 2)) {
-            for (int i = 0; i < swarm.size(); i++) {
-                xySeriesSwarm.add(swarm.get(i).getPosition().getFitness()[0], swarm.get(i).getPosition().getFitness()[1]);
+        if ((swarm.length != 0) && (swarm[0].getPosition().getFitness().length >= 2)) {
+            for (int i = 0; i < swarm.length; i++) {
+                xySeriesSwarm.add(swarm[i].getPosition().getFitness()[0], swarm[i].getPosition().getFitness()[1]);
             }
             jFreeChartSwarm.setTitle("no. de chamadas: " + currentNCallObjectiveFunction);
         }
