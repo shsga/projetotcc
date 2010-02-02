@@ -1,0 +1,48 @@
+public static void updatePBests(Particle p){
+        ArrayList<Position> pbests = p.getPBests();
+        ArrayList<Position> result = new ArrayList<Position>();
+        Position pbest;
+        for(int i=0;i<pbests.size();i++){
+            pbest = pbests.get(i);
+            int dominace = verifyDominace(p.getPosition(), pbest);
+            if(dominace == Constants.DOMINATED){
+               return;
+            }
+            if(dominace == Constants.INCOMPARABLE){
+                result.add(pbest);
+            }
+        }
+        result.add(p.getPosition());
+        p.setPBestes(result);
+    }
+
+
+ public static Position selectPbest(Particle particle){
+        if(particle.getPBests().size() == 1){
+            return particle.getPBests().get(0);
+        }
+        if(particle.getPBests().size() == 0){
+            return particle.getPosition().clone();
+        }
+
+        double sum = 0.0;
+        for(int i=0; i < particle.getPBests().size(); i++){
+            sum += particle.getPBests().get(i).getCrowdingDistance();
+        }
+        if(sum != 0.0){
+            double rouletteValue = Math.random() * sum;
+            double lowerValue = 0.0;
+            double higherValue = 0.0;
+            for(int i=0;i<particle.getPBests().size();i++){
+                higherValue += particle.getPBests().get(i).getCrowdingDistance();
+                if( rouletteValue >= lowerValue && rouletteValue < higherValue){
+                    return particle.getPBests().get(i);
+                }
+                lowerValue = higherValue;
+            }
+        }else{
+            int intValue = (int) (Math.random() * particle.getPBests().size());
+            return (particle.getPBests().get(intValue));
+        }
+        return null;
+    }
