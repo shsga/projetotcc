@@ -17,7 +17,7 @@ public class Constants {
     public static final int DOMINATES = 1;
 
     //Constantes do MOPSO
-    public static final int SIZE_OF_SWARM = 5;
+    public static final int SIZE_OF_SWARM = 30;
     public static final int TOT_ITERATIONS = 100;
     public static final double MUTATION_RATE = 0.5;
     public static final int NUM_OF_GRIDS = 2;
