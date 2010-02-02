@@ -56,14 +56,13 @@ public class Grid {
     }
 
     public Position selectLider(){
-
-        if(totPositions == 0) return null;
-        
+        if(totPositions == 0) return null;      
         double sum = 0.0;
         for(int i=0;i<this.cubes.length ;i++){
-            sum += cubes[i].getFitnessDiverty();
+             if(cubes[i].getFitnessDiverty() != 0){
+               sum += cubes[i].getFitnessDiverty();
+             }
         }
-
         double rouletteValue;
         double lowerValue = 0.0;
         double upperValue = 0.0;;
@@ -71,12 +70,14 @@ public class Grid {
         Hipercube cubeSelected = null;
 
         for(int i=0;i<cubes.length;i++){
-            upperValue += cubes[i].getFitnessDiverty();
-            if( rouletteValue >= lowerValue && rouletteValue < upperValue){
-                cubeSelected = cubes[i];
-                break;
+            if(cubes[i].getFitnessDiverty() != 0.0){
+                upperValue += cubes[i].getFitnessDiverty();
+                if( rouletteValue >= lowerValue && rouletteValue < upperValue){
+                    cubeSelected = cubes[i];
+                    break;
+                }
+                lowerValue = upperValue;
             }
-            lowerValue = upperValue;
         }
 
         Position leader;
