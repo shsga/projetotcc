@@ -6,8 +6,8 @@
 package tests;
 
 import java.util.ArrayList;
-import mymopso.Particle;
-import mymopso.Position;
+import Entities.Particle;
+import Entities.Position;
 
 /**
  *

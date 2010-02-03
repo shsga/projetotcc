@@ -10,17 +10,14 @@ import grids.Hipercube;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
-import mymopso.Particle;
-import mymopso.Position;
+import Entities.Particle;
+import Entities.Position;
 
 /**
  *
  * @author Elliackin
  */
 public class Util {
-
-
-    
 
     public static int verifyDominace(Position p1,Position p2){
         double[] fitness1 = p1.getFitness();
@@ -71,11 +68,8 @@ public class Util {
                    if(dominance == Constants.DOMINATED){
                        isDominated[i] = true;
                    }
-               
                }
-
             }
-            
         }
 
         for(int i=0;i<swarm.length;i++){

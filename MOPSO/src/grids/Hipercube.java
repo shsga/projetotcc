@@ -7,7 +7,7 @@ package grids;
 
 
 import java.util.ArrayList;
-import mymopso.Position;
+import Entities.Position;
 import util.Constants;
 import util.Parameters;
 
@@ -39,7 +39,7 @@ public class Hipercube {
         this.positions.clear();
     }
 
-    public void localizePositions(ArrayList<Position> externArchive){
+    public void locatePositions(ArrayList<Position> externArchive){
         
         for(int i=0;i<externArchive.size();i++){
             Position p = externArchive.get(i);
@@ -67,8 +67,6 @@ public class Hipercube {
     public double getFitnessDiverty(){
         return this.fitness;
     }
-
-   
 
     public ArrayList<Position> getPositions() {
         return this.positions;

@@ -7,7 +7,6 @@ package problems;
 
 
 import java.util.ArrayList;
-import util.Constants;
 import util.Parameters;
 
 
@@ -27,7 +26,6 @@ public class ZDT1 implements Problem {
         functions.add( new ZDT1_F2() );
 
         nFunctions = functions.size();
-       
 
         Parameters.UPPER_LIMIT = this.getMaxBound(nDimensions);
         Parameters.LOWER_LIMIT = this.getMinBound(nDimensions);

@@ -6,7 +6,6 @@
 package util;
 
 import problems.Problem;
-import problems.ZDT1;
 
 /**
  *
@@ -20,6 +19,4 @@ public class Parameters {
     public static  double UPPER_LIMIT = 8;
     public static  int NUMBER_OF_DIMENSIONS = 30;
     public static  int NUMBER_OF_OBJECTIVES = 2;
-
-
 }

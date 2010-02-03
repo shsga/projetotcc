@@ -6,7 +6,7 @@
 package tests;
 
 import gui.MOPSO_CDRJFrame;
-import mymopso.MOPSO;
+import technic.MOPSO;
 import problems.ZDT1;
 import util.Parameters;
 
