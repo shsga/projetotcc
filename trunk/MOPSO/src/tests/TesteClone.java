@@ -5,7 +5,7 @@
 
 package tests;
 
-import mymopso.Position;
+import Entities.Position;
 
 /**
  *

@@ -3,8 +3,8 @@ package tests;
 
 import java.util.ArrayList;
 
-import mymopso.Particle;
-import mymopso.Position;
+import Entities.Particle;
+import Entities.Position;
 
 /*
  * To change this template, choose Tools | Templates

@@ -1,11 +1,8 @@
 package problems;
 
-import problems.ObjectiveFunction;
 import java.util.ArrayList;
 
 public interface Problem {
-
-    
 
     public abstract ArrayList<ObjectiveFunction> getFunctions();
 

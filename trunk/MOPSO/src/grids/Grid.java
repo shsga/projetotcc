@@ -7,7 +7,7 @@ package grids;
 
 import java.util.ArrayList;
 import java.util.Random;
-import mymopso.Position;
+import Entities.Position;
 import util.Parameters;
 import util.Util;
 /**
@@ -46,7 +46,7 @@ public class Grid {
         }
         
         for(int i=0;i<cubes.length;i++){
-            this.cubes[i].localizePositions(externArchive);
+            this.cubes[i].locatePositions(externArchive);
         }
         
         for(int i=0;i<cubes.length;i++){
@@ -65,7 +65,7 @@ public class Grid {
         }
         double rouletteValue;
         double lowerValue = 0.0;
-        double upperValue = 0.0;;
+        double upperValue = 0.0;
         rouletteValue = Math.random() * sum;
         Hipercube cubeSelected = null;
 
