@@ -153,7 +153,7 @@ public class Util {
         Random random = new Random();
         for(int i =0; i < swarm.length; i++){
             double value =
-                Math.pow((1.0 - ( currentIteration / Constants.TOT_ITERATIONS)), (5.0 / Constants.MUTATION_RATE));
+                Math.pow((1.0 - ( ((double)currentIteration) / Constants.TOT_ITERATIONS)), (5.0 / Constants.MUTATION_RATE));
             if(flip(value)){
                 int dim = r.nextInt(Parameters.NUMBER_OF_DIMENSIONS);
                 double mutRange = Parameters.DELTA*value;
@@ -179,6 +179,8 @@ public class Util {
 
         return false;
     }
+
+
 
     public static double[] maxValuesFitnessExternArchive(ArrayList<Position> externalArchive ){
         double[] maxValues = new double[Parameters.NUMBER_OF_OBJECTIVES];
