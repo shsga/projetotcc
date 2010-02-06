@@ -7,7 +7,7 @@ package grids;
 
 
 import java.util.ArrayList;
-import Entities.Position;
+import mymopso.Position;
 import util.Constants;
 import util.Parameters;
 
